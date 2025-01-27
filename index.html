@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quote Generator</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f7f7;
+    }
+
+    .quote-container {
+      text-align: center;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+    }
+
+    #quote {
+      font-size: 1.5rem;
+      color: #555;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="quote-container">
+    <h1>Quote Generator</h1>
+    <p id="quote">Click the button for a new quote!</p>
+    <button id="generate-btn">Generate Quote</button>
+  </div>
+</body>
+<script>
+  const quotes = [
+    "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    "The only way to do great work is to love what you do.",
+    "Believe you can and you're halfway there.",
+    "Your time is limited, don't waste it living someone else's life.",
+    "The harder you work for something, the greater you'll feel when you achieve it."
+  ];
+
+  document.getElementById("generate-btn").addEventListener("click", function () {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById("quote").textContent = quotes[randomIndex];
+  });
+</script>
+
+</html>
